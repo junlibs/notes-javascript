@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js编写位置</title>
+
+  <!-- 
+    1. 可以将js编写到网页内部的script标签中.script标签的type="text/javascript"可以不写，因为默认就是它。
+   -->
+   <script type="text/javascript">
+    alert("我可以写在script标签中")
+   </script>
+
+   <!-- 
+    2. 可以将js编写在外部的js文件中，然后通过script标签的src属性进行引入。这种方式时，script标签不能再去包裹内容了。
+    -->
+    <script src="./script.js"></script>
+</head>
+<body>
+  <!-- 
+    3. 可以将js代码编写到标签的指定属性中
+   -->
+   <button onclick="alert('点击了')">点击一下</button>
+   <button onmousemove="alert('鼠标移动了')">移动鼠标到这里</button>
+   <a href="javascript:alert(123);">超链接</a>
+</body>
+</html>
