@@ -121,3 +121,22 @@ js中数据类型可以分为7种原始值、对象两大类（函数实际上�
 
    
 
+### 2.2 类型检查
+
+使用typeof运算符检查不同的值的类型。
+
+要注意的是，使用typeof检查null的结果是"object"。
+
+```javascript
+console.log(typeof 42)//"number"
+console.log(typeof 11n)//"bigint"
+console.log(typeof (1-'a'))//"number"
+console.log(typeof 'blue')//"string"
+console.log(typeof true)//"boolean"
+console.log(typeof abc)//"undefined"
+console.log(typeof null)//"object"
+console.log(typeof Symbol(10))//"symbol"
+```
+
+> 在 JavaScript 最初的实现中，JavaScript 中的值是由一个表示类型的标签和实际数据值表示的。对象的类型标签是 0。由于 `null` 代表的是空指针（大多数平台下值为 0x00），因此，null 的类型标签是 0，`typeof null` 也因此返回 `"object"`。	——<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/typeof"> MDN</a>
+
