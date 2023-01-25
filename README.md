@@ -69,3 +69,55 @@ js代码有以下常见编写位置：
 3. 常量的字母全部大写，以下划线_分隔单词，如 MAX_LENGTH；
 4. 不建议使用 内置函数或类名作为标识符。
 
+
+
+## chapter-02.数据类型-原始值
+
+js中数据类型可以分为7种原始值、对象两大类（函数实际上是function类型的实例，也就是说函数也是对象）。
+
+7种原始值：数值number、大整数bitInt、字符串string、布尔boolean、空值null、未定义undefined、符号symbol。
+
+### 2.1 数值和大整数
+
+1. 数值 Number
+
+   - js中所有的整数和浮点数都是Number类型；
+   - js中的数值并不是无限大的，当超过一定范围后会显示近似值；
+   - Infinity是一个特殊的数值，表示无穷；
+   - NaN也是一个特殊的数值，表示非法的数值。
+
+   ```javascript
+   let a = 10
+   console.log(a) //10
+   let b = 1/0
+   console.log(b) //Infinity
+   let c = 1 - 'hello'
+   console.lgo(c) //NaN
+   ```
+
+   
+
+2. 大整数 BigInt
+
+   - 大整数使用n结尾，它可以表示的数字范围是无限大。（无限大是指在内存不溢出的情况下！）
+
+   ```javascript
+   let d = 9n
+   console.log(d)//9n
+   ```
+
+   
+
+3. 其他进制数字
+
+   - 二进制，以0b开头
+   - 八进制，以0o开头
+   - 十六进制，以0x开头
+
+   ```javascript
+   let e = 0b1010
+   console.log(e) //10 控制台输出的是按照十进制输出
+   ```
+
+   
+
