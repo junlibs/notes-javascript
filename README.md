@@ -140,3 +140,19 @@ console.log(typeof Symbol(10))//"symbol"
 
 > 在 JavaScript 最初的实现中，JavaScript 中的值是由一个表示类型的标签和实际数据值表示的。对象的类型标签是 0。由于 `null` 代表的是空指针（大多数平台下值为 0x00），因此，null 的类型标签是 0，`typeof null` 也因此返回 `"object"`。	——<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/typeof"> MDN</a>
 
+
+
+### 2.3 字符串
+
+在js中使用单引号或双引号来表示字符串。
+
+- 字符串不能跨行，除非以下两种方式：1，使用转移字符\将换行符转义，但不推荐；2，使用模板字符串，即反引号来表示字符串。
+- 模板字符串中可以嵌入变量。
+- 使用typeof运算符检查字符串时，会返回"string"。
+
+```javascript
+let name = "JavaScript"
+let str = `你好！${name}`
+console.log(str)//你好！JavaScript
+```
+

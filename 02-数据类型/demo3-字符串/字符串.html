@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>字符串</title>
+  <script>
+    /* 
+      字符串
+        在js中使用单引号或双引号来表示字符串
+        转义字符 \
+        字符串不能跨行，除非以下两种方式：
+          1.使用\将换行符转义
+          2.使用模板字符串，即:使用反引号来表示字符串
+
+        模板字符串中可以嵌入变量
+
+        使用typeof运算符检查字符串时，会返回 string
+    */
+    let a = "hello"
+    console.log(a)//chrome控制台中打印黑色的字符串 hello
+    a = '你好'
+    console.log(a)//chrome控制台中打印黑色的字符串 你好
+
+    a = '这是一个"字符串"'
+    console.log(a)//这是一个"字符串"
+    a = "这是一个'字符串'"
+    console.log(a)//这是一个'字符串'
+
+    a = "这是一个\"字符串\""
+    console.log(a)//这是一个"字符串"
+
+    a = `我是
+    模板字符串`
+    console.log(a)
+    /*打印结果也是换行的：
+    我是
+        模板字符串
+    */
+
+    //模板字符串中可以嵌入变量
+    let name = "JavaScript"
+    let str = `你好！${name}`
+    console.log(str)//你好！JavaScript
+
+    let b = 10
+    console.log(`b=${b}`)//b=10
+
+    let c = `javascript`
+    console.log(typeof c)//"string"
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
