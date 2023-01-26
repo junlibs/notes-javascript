@@ -156,3 +156,47 @@ let str = `你好！${name}`
 console.log(str)//你好！JavaScript
 ```
 
+
+
+### 2.4 其他数据类型
+
+1. 布尔值 Boolean
+
+   - 只有true和false；
+
+   - 使用 typeof检查时返回"string"。
+
+2. 空值 Null
+
+   - 空值用来表示空对象
+   - 空值只有一个 null
+   - 使用typeof检查空值时会返回"object"
+
+3. 未定义 Undefined
+
+   - 当声明一个变量而没有赋值时，它的值就是undefined
+   - 使用typeof检查时会返回"undefined"
+
+4. 符号
+
+   - 用来创建一个唯一的标识
+   - 使用typeof价差符号时会返回"symbol"
+
+```javascript
+let bool = true
+console.log(bool)//true
+console.log(typeof bool)//"boolean"
+
+let a = null
+console.log(a)//null
+console.log(typeof a)//"object"
+
+let b
+console.log(b)//undefined
+console.log(typeof b)//"undefined"
+
+let c = Symbol()//调用Symbol()函数创建了一个符号
+console.log(c)//Symbol()
+console.log(typeof c)//"symbol"
+```
+

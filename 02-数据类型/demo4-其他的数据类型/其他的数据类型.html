@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>其他的数据类型</title>
+  <script>
+    /* 
+      布尔值（Boolean）
+        布尔值主要用来进行逻辑判断
+        布尔值只有两个：true和false
+        使用typeof检查一个布尔值时会返回字符串"boolean"，
+
+      空值（Null）
+        空值用来表示空对象
+        空值只有一个  null
+        使用typeof检查一个空值时会返回字符串"object"，
+        由此可见，使用typeof无法检查空值，属于历史遗留bug
+
+      未定义（Undefined）
+        当声明一个变量而没有赋值时，它的值就是undefined
+        undefined类型的值只有一个，就是undefined
+        使用typeof检查一个Undefined类型的值时，会返回字符串"undefined"
+
+      符号（Symbol）
+        用来创建一个唯一的标识
+        使用typeof检查符号时会返回字符串"Symbol"
+
+
+      总结：JS中原始值一共7种：
+          1. Number
+          2. BigInt
+          3. String
+          4. Boolean
+          5. Null
+          6. Undefined
+          7. Symbol
+          七种原始值是构成各种数据的基石
+          原始值在JS中是不可变类型，一旦创建就不可更改。
+
+    */
+               
+    let bool = true
+    console.log(bool)//在chrome控制台中显示蓝色的 true
+    console.log(typeof bool)//"boolean"
+
+    let a = null
+    console.log(a)//null
+    console.log(typeof a)//"object"
+
+    let b
+    console.log(b)//undefined
+    console.log(typeof b)//"undefined"
+
+    let c = Symbol()//调用Symbol()函数创建了一个符号
+    console.log(c)//控制台输出红颜色的 Symbol()
+    console.log(typeof c)//"symbol"
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
