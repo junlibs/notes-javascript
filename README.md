@@ -291,7 +291,7 @@ console.log(typeof b, b)//"number" 123.45
 
 ### 2.7类型转换-转到布尔值
 
-其他类型转换到布尔值，使用Boolean()函数即可。
+其他类型转换到布尔值，显式转换使用Boolean()函数即可。
 
 - 对于number类型，0和NaN，转换为false；其余是true
 - 对于string类型，空串转换为false，其余是true
@@ -301,6 +301,62 @@ console.log(typeof b, b)//"number" 123.45
 
 
 ## chapter-03.运算符
+
+### 3.1 算术运算符
+
+算术运算符有：
+
+- 加 +
+- 减 -
+- 乘 *
+- 除 /
+- 取余 %
+- 幂运算 **
+
+需要注意的是：
+
+- 除法运算不是整除，结果会有小数位。除数为0不会报错，会返回Infinity
+- js是弱类型语言，当进行运算时，会通过自动的类型转换来完成运算：
+  - 算术运算时，除了字符串的加法，其他运算的操作数是非数值时，都会转换为数值，然后再运算；
+  - 当任意一个值和字符串做加法运算时，它会先将其他值转换为字符串，然后再做拼串操作。
+
+```js
+let a = 10 / 5
+console.log(a)//2
+
+a = 10 / 3
+console.log(a)//3.333333333 注意：结果并不取整
+
+a = 10 / 0
+console.log(a)//Infinity
+
+//字符串参与加法运算（隐式类型转换）
+a = 2 + '3'
+console.log(a)//"2" + "3" => "23"
+
+a = 'hello' + 'js'
+console.log(a)//"hellojs"
+
+a = true + ''
+console.log(a)//"true"
+
+//其他类型参与运算（隐式类型转换）
+a = 10 - '5'
+console.log(a)//10-5 => 5
+
+a = 10 + true
+console.log(a)//10+1 => 11
+
+a = 5 + null
+console.log(a)//5+0 => 5
+
+a = 6 - undefined
+console.log(a)//6-NaN => NaN
+```
+
+
+
+
 
 
 
