@@ -356,6 +356,35 @@ console.log(a)//6-NaN => NaN
 
 
 
+### 3.2赋值运算符
+
+赋值运算符有：
+
+- =
+- +=
+- -=
+- *=
+- /=
+- %=
+- **=
+- ??=    此为空赋值，只有当变量的值为null或undefined时才会对变量进行赋值
+
+```js
+let a = 10
+a ??= 100
+console.log(a)//a还是原来的值，没有赋值成功，因为a原来不是null或undefined
+
+let b = null
+b ??= 11
+console.log(b)//11
+
+let c 
+c ??= 22
+console.log(c)//22
+```
+
+
+
 
 
 
