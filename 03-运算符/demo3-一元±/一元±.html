@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>一元±</title>
+  <script>
+    /* 
+      元就是几个值，只需要一个操作数的就是一元运算符
+      一元的±（加减）
+        + 正号，不会改变数值的符号
+        - 负号，可以对数值进行符号位取反
+        当我们对非数值类型进行正负运算时，会先将其转换为数值然后再运算。
+
+
+    */
+   let a = 10
+   a = +a
+   console.log(a)//10
+
+   let b = '123'
+   console.log(typeof b, b)//"string" "123"
+   b = Number(b)
+   console.log(typeof b, b)//"number" 123
+
+   let c = '123'
+   c = -c//数值隐式类型转换
+   console.log(typeof c, c)//"number" -123
+
+   let d = '123'
+   d = +d
+   console.log(typeof d, d)//"number" 123
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
