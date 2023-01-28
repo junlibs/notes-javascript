@@ -547,5 +547,73 @@ console.log(NaN < 0)//f
 console.log(NaN <= 0)//f
 ```
 
+### 3.7 相等和全等运算符
+
+- 相等运算符，==，用来比较两个值是否相等。
+
+  - 使用相等运算符比较两个不同类型时，它会将其转换为相同的类型（通常转换为数字），然后再比较
+
+  - null和undefined进行相等比较时，会返回true
+
+  - NaN不和任何值相等，包括它自己
+
+    ```js
+    let result = 1 == 1
+    console.log(result)//true
+    
+    result = 1 == 3
+    console.log(result)//false
+    
+    result = 1 == '1'
+    console.log(result)//true
+    
+    result = null == undefined
+    console.log(result)//true
+    //如果转换成数值，null=>0，undefined=>NaN，应该不相等。所以这里没有转换为数值比较
+    
+    result = NaN == NaN
+    console.log(result)//false
+    //NaN不和任何值相等，包括它自己
+    ```
+
+    
+
+- 全等运算符，===，用来比较两个值是否全等。
+
+  - 它不会进行自动的类型转换，如果两个值的类型不同，直接返回false；
+
+  - null和undefined进行全等比较时，会返回false。
+
+    ```js
+    result = 1 === '1'
+    console.log(result)//false
+    
+    result = null === undefined
+    console.log(result)//false
+    ```
+
+    
+
+- 不等运算符，!=，用来检查两个值是否不相等。会进行自动类型转换。
+
+  ```js
+  result = 1 != 1
+  console.log(result)//false
+  
+  result = 1 != '1'
+  console.log(result)//false
+  ```
+
+  
+
+- 不全等运算符，!==，用来比较两个值是否不全等。不会进行自动类型转换。
+
+  ```js
+  result = 1 !== '1'
+  console.log(result)//true
+  ```
+
+  
+
 
 
