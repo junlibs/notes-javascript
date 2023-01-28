@@ -200,3 +200,107 @@ console.log(c)//Symbol()
 console.log(typeof c)//"symbol"
 ```
 
+### 2.5 类型转换-转到字符串
+
+类型转换，就是将一种数据类型转换为其他类型。本节介绍各种类型转换到字符串类型，有两种显式转换方式：
+
+1. 调用toString()方法将其他类型转换为字符串；
+2. 调用String()函数，将其他类型转换为字符串。
+
+```javascript
+//number——>string
+let a = 10
+let b = a.toString()//根据a的值10创建一个字符串"10"，但是a的值不会发生变化
+console.log(typeof b, b)//"string" "10"
+console.log(typeof a, a)//"number" 10
+
+//bitint——>string
+let aa = 11n
+let bb = aa.toString()
+console.log(typeof bb, bb)//"string" "11" 转换为字符串后，把n剔除了
+
+//boolean——>string
+let bool = true
+let strbool = bool.toString()
+console.log(typeof strbool, strbool)//"string" "true"
+
+//symbole——>string
+let symb = Symbol(11)
+let strsymb = symb.toString()
+console.log(typeof strsymb, strsymb)//"string" "Symbol(11)"
+
+//null——>string
+//由于null和undefined中没有toString()方法，所以对这两个调用toString()时会报错。
+let c = null
+let d = String(c)
+console.log(d, d)//"string" "null"
+
+//undefined——>string
+let x
+let y = String(x)
+console.log(typeof y, y)
+```
+
+### 2.6 类型转换-转换到数字
+
+将其他类型转换为数值，就是通过`Number()`函数。对于字符串来说，除了利用Number()函数，还有两种专门将字符串转换为数值的函数，即，`parseInt()`和`parseFloat()`。
+
+- 注意：字符串利用Number()函数转换时，只有字符串是合法数字时才会转换为对应的数字；如果为空串或空格串，则转换为0；如果不是合法的数字，则会转换为NaN
+- 布尔值，true转换为1，false转换为0
+- null转换为0
+- undefined转换为NaN
+
+parseInt()：将字符串转换为一个整数
+
+- ```
+  解析时，会自左向右读取一个字符串，直到读取到字符串中所有的有效整数。
+  也可以使用paseInt()来对一个数字进行取整。
+  ```
+
+parseFloat()：将一个字符串转换为浮点数
+
+- ```
+  解析时，会自左向右读取一个字符串，直到读取到字符串中所有的有效小数
+  ```
+
+```javascript
+//parseInt()示例
+a = '123'
+b = parseInt(a)
+console.log(typeof b, b)//"number" 123
+
+a = '123a'
+b = parseInt(a)
+console.log(typeof b, b)//"number" 123  这里就是与Number()的区别了
+
+a = '123.45'
+b = parseInt(a)
+console.log(typeof b, b)//"number" 123
+
+a = 123
+b = parseInt(a)//虽然a不是字符串，但是在处理的时候，会先根据a值生成它的字符串
+console.log(typeof b, b)//"number" 123
+
+//parseFloat()示例
+a = '123.45'
+b = parseFloat(a)
+console.log(typeof b, b)//"number" 123.45
+```
+
+
+
+### 2.7类型转换-转到布尔值
+
+其他类型转换到布尔值，使用Boolean()函数即可。
+
+- 对于number类型，0和NaN，转换为false；其余是true
+- 对于string类型，空串转换为false，其余是true
+- 对于null，转换为false
+- 对于undefined，转换为false
+
+
+
+## chapter-03.运算符
+
+
+

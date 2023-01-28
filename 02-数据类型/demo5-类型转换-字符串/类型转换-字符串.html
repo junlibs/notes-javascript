@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>类型转换-字符串</title>
+  <script>
+    /* 
+      类型转换：指的是，将一种数据类型转换为其他类型
+      主要是将其他类型转换为字符串、数值和布尔值
+
+      本节讨论转换为字符串（强制转换/显示转换）
+        1. 调用toString()方法将其他类型转换为字符串
+            调用xxx的yyy方法 <=> xxx.yyy()
+            如，a为数值10，a.toString(),根据a的值10创建一个字符串"10"，但是a的值不会发生变化
+            由于null和unfined中没有toString()，所以对这两个调用toString()时会报错
+        2. 调用String()函数，将其他类型转换为字符串
+            调用xxx函数 <=> xxx()
+            原理：
+                对于拥有toString()方法的值，调用String()函数时，实际上就是在调用toString()方法
+                对于null，则直接转换为"null"
+                对于undefined，直接转换为"undefined"
+    */
+    //toString()示例
+    let a = 10
+    console.log(typeof a, a)//"number" 10
+
+    let b = a.toString() //根据a的值10创建一个字符串，但是a的值不会发生变化
+    console.log(typeof b, b)//"string" "10"
+    console.log(typeof a, a)//"number" 10
+
+    let c = 11n
+    c = c.toString()
+    console.log(typeof c, c)//"string" "11"   把n剔除了
+
+    c = NaN
+    c = c.toString()
+    console.log(typeof c, c)//"string" "NaN"
+
+    //boolean——>string
+    let bool = true
+    let strbool = bool.toString()
+    console.log(typeof strbool, strbool)//"string" "true"
+
+    //symbole——>string
+    let symb = Symbol(11)
+    console.log(typeof symb, symb)
+    let strsymb = symb.toString()
+    console.log(typeof strsymb, strsymb)
+
+    let d = null
+    //d.toString()//null是不可以调用方法的，会报错
+    let e = undefined
+    //e.toString()//undefined是不可以调用方法的，会报错
+    console.log("=================================================")
+
+    //String()示例
+    let aa = 33
+    console.log(typeof aa, aa)//"number" 33
+    let bb = String(aa)//根据aa的值33创建一个字符串，但是aa的值不会发生变化
+    console.log(typeof bb, bb)//"string" "33"
+
+    aa = null
+    bb = String(aa)
+    console.log(typeof bb, bb)//"string" "null"
+    //undefined——>string
+    aa = undefined
+    bb = String(aa)
+    console.log(typeof bb, bb)//"string" "undefined"
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

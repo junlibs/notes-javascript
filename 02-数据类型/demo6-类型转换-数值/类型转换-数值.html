@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>类型转换-数值</title>
+  <script>
+    /* 
+      将其他的数据类型转换为数值
+        1. 使用Number()函数来将其他类型转换为数值
+            转换的情况：
+                字符串：(合法指的是：纯数字，空串，全部为空格的字符串)
+                  如果字符串是一个合法的数字，则会自动转换为对应的数字.
+                  如果字符串是一个不合法的数字，则转换为NaN.
+                  如果字符串是空串或纯空格的字符串，则转换为0
+                布尔值：
+                  true转换为1，false转换为0
+                null：
+                  转换为0
+                undefined：
+                  转换为NaN
+        2. 专门用来将字符串转换为数值的两个方法：
+            parseInt()——将一个字符串转换为一个整数
+              解析时，会自左向右读取一个字符串，直到读取到字符串中所有的有效整数。
+              也可以使用paseInt()来对一个数字进行取整。
+            parseFloat()——将一个字符串转换为浮点数
+              解析时，会自左向右读取一个字符串，直到读取到字符串中所有的有效小数
+
+
+    
+    */
+    //Number()示例
+    let a = '123'
+    console.log(typeof a, a)//"string" "123"
+    let b = Number(a)
+    console.log(typeof b, b)//"number" 123
+
+    a = ''//空串
+    b = Number(a)
+    console.log(typeof b, b)//"number" 0
+
+    a = '       '//纯空格
+    b = Number(a)
+    console.log(typeof b, b)//"number" 0
+
+    a = 'abc'
+    b = Number(a)
+    console.log(typeof b, b)//"number" NaN
+
+    a = '123a'
+    b = Number(a)
+    console.log(typeof b, b)//"number" NaN
+
+    //boolean
+    a = true
+    b = Number(a)
+    console.log(typeof b, b)//"number" 1
+
+    //null
+    a = null
+    b = Number(a)
+    console.log(typeof b, b)//"number" 0
+
+    //undefined
+    a = undefined
+    b = Number(a)
+    console.log(typeof b, b)//"number" NaN
+    console.log('===============================')
+
+    //parseInt()示例
+    a = '123'
+    b = parseInt(a)
+    console.log(typeof b, b)//"number" 123
+
+    a = '123a'
+    b = parseInt(a)
+    console.log(typeof b, b)//"number" 123  这里就是与Number()的区别了
+
+    a = '123.45'
+    b = parseInt(a)
+    console.log(typeof b, b)//"number" 123
+
+    a = 123
+    b = parseInt(a)//虽然a不是字符串，但是在处理的时候，会先根据a值生成它的字符串
+    console.log(typeof b, b)//"number" 123
+
+    //parseFloat()示例
+    a = '123.45'
+    b = parseFloat(a)
+    console.log(typeof b, b)//"number" 123.45
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
