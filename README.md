@@ -495,7 +495,57 @@ console.log(typeof b, b)//"number" -123
 
 
 
+### 3.6 关系运算符
 
+关系运算符，用来检查两个值之间的关系是否成立，成立返回true，否则返回false.
+
+常见的关系运算符有: >、>=、<、<=。
+
+需要注意的是：
+
+- 当对非数值进行关系运算时，它会先将其转换为数值，然后再比较；
+- 当关系运算符的两侧是两个字符串，它不会将字符串转换为数值，而是会逐位比较字符的unnicode编码。利用 这个特点，可以对字符串按照字母排序。
+- 比较两个字符串格式的数字时，一定要进行类型转换。
+
+```js
+let result = 10 > 5
+console.log(result)//true
+
+result = 5 < '10'
+console.log(result)//true
+
+result = '1' > false
+console.log(result)//true
+
+result = 'a' < 'b'
+console.log(result)//true
+
+result = 'abc' < 'b'
+console.log(result)//true
+
+result = '12' < '2'
+console.log(result)//true
+
+result = +'12' < '2'
+console.log(result)//false
+
+//检查num是否在5和10之间的错误写法：
+let num = 6
+result = 5 < num < 10
+console.log(result)//恒为true
+//原因分析：5 < num < 10,从左往右运算，5 < num的结果是true，则原式等价于计算 true < 10，根据规则，要把true转换为数字1,也就是1<10，结果为true。所以，无论num是几，无论5 < num的结果是true还是false，也就要么是1要么是0，都是恒小于10的。
+
+//检查num是否在5和10之间的正确写法：
+num = 6
+result = num > 5 && num < 10
+console.log(result)//true
+
+//NaN
+console.log(NaN > 0)//f
+console.log(NaN >= 0)//f
+console.log(NaN < 0)//f
+console.log(NaN <= 0)//f
+```
 
 
 
