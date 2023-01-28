@@ -615,5 +615,23 @@ console.log(NaN <= 0)//f
 
   
 
+### 3.8 条件运算符
+
+条件运算符，又叫三目运算符。
+
+```js
+true ? alert(1) : alert(2)//执行alert(1)
+false ? alert(1) : alert(2)//执行alert(2)
+
+let a = 10
+let b = 20
+a > b ? alert('a大') : alert('b大')
+
+let max = a > b ? a : b
+alert(max)
+```
+
+
+
 
 
