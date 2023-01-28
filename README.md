@@ -405,6 +405,96 @@ console.log(typeof b, b)//"number" -123
 
 
 
+### 3.4 自增和自减运算符
+
+自增分为前自增（++a）和后自增（a++），都会使原变量增加1；不同的是，返回值不同，后自增返回的是自增前的值，是旧值，后自增返回的是自增后的值，是新值。
+
+自减同理。
+
+### 3.5 逻辑运算符
+
+- 逻辑非 ！，用来对一个值进行非运算。
+
+  - 可以对布尔值进行取反操作；
+
+  - 如果对一个非布尔值进行取反，它会先将其转换为布尔值然后再取反。可以利用这个特点将其他类型转换为布尔值。
+
+    ```js
+    let a = true
+    console.log(a)//true
+    a = !a
+    console.log(a)//false
+    
+    a = 2
+    a = !a
+    console.log(a)//false
+    
+    a = 2
+    a = !!a
+    console.log(a)//true
+    ```
+
+- 逻辑与 &&，对两个值进行与运算。
+
+  - 当&&左右都为true时，则返回true，否则返回false；
+
+  - &&与运算是短路的与，如果第一个值为false则不看第二个值；
+
+  - 对于非布尔值进行与运算，它会转换为布尔值然后运算，但最终返回原值。如果第一个值是false(表示false的值)，则直接返回false(即返回第一个值)，第二个不再看；如果第一个值是true，则返回第二个值。
+
+    ```js
+    let result = true && true
+    console.log(result)//true
+    
+    result = true && false
+    console.log(result)//false
+    
+    true && alert(123)//第一个值为true，所以alert会执行
+    false && alert(45678)//第一个值为false，alert不会执行
+    
+    result = 1 && 2
+    console.log(result)//打印数值2. 因为1相当于true，即第一个值为true，看第二个
+    
+    result = 1 && 0
+    console.log(result)//打印数值0。因为第一个值为1,即true，看第二个值
+    
+    result = 0 && NaN
+    console.log(result)//打印数值0。因为第一个值是0,即false，不再看第二个
+    ```
+
+- 逻辑或 ||，对两个值进行或运算。
+
+  - 当||左右有true时，则返回true，否则返回false；
+
+  - ||是短路的或，如果第一个值为true则不看第二个值；
+
+  - 对于非布尔值进行或运算，它会转换为布尔值然后运算，但最终返回原值。如果以一个值为true，就返回true，第二个值不再看；如果第一个值为false，则返回第二个值。
+
+    ```js
+    result = true || false
+    console.log(result)//true
+    
+    result = false || false
+    console.log(result)//false
+    
+    false || alert('fff')//第一个值为false，alert会执行
+    true || alert('hhh')//第一个值为true，alert不会执行
+    
+    result = 1 || 2
+    console.log(result)//1
+    
+    result = "hello" || NaN
+    console.log(result)//"hello"
+    
+    result = NaN || 1
+    console.log(result)//1
+    
+    result = NaN || null
+    console.log(result)//null
+    ```
+
+
+
 
 
 
