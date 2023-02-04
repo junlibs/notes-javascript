@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>if-else语句</title>
+  <script>
+    /* 
+      if-else语句
+      语法：
+        if(条件表达式) {
+          语句
+        } else {
+          语句
+        }
+
+      执行流程：
+        if-else执行时，先对条件表达式进行求值判断，
+          如果结果为true，则执行if后的语句，
+          如果结果为false，则执行else后的语句。
+
+
+      if-else if-else语句
+      语法：
+        if(条件表达式) {
+          语句
+        } else if(条件表达式) {
+          语句
+        } else if（条件表达式）{
+          语句
+        } else {
+          语句
+        }
+
+        执行流程：
+          if-else if -else语句，会自上而下依次对if后的条件表达式进行求值判断，
+            如果条件表达式结果为true，则执行if后的语句，执行完毕整个语句结束；
+            如果条件表达式结果为false，则继续向下执行，知道找到为true的为止；
+            如果所有的条件表达式都是false，则执行else后的语句
+        注意：if-else if-else语句中只会有一个代码块被执行，
+                一旦有执行的代码块，下边的条件都不会再继续判断了，
+                所以一定要注意条件的编写顺序。
+    */
+
+    let age = 60
+    if (age >= 18) {
+      alert('成年人')
+    } else {
+      alert('未成年人')
+    }
+
+    //if - else if - else
+    let score = 100
+    if (score >90) {
+      alert('成绩优秀')
+    } else if (score > 80) {
+      alert('成绩良好')
+    } else if (score > 70) {
+      alert('成绩中等')
+    } else if (score >= 60) {
+      alert('成绩及格')
+    } else {
+      alert('成绩不及格')
+    }
+
+    //prompt()可以用来获取用户输入的内容
+    //它会将用户输入的内容以字符串的形式返回，可以通过变量来接收
+    let input = prompt('请输入一个整数')
+    alert(typeof input)//'string'
+
+    let inputs = +prompt('请输入一个整数')
+    alert(typeof inputs)//'number'
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
