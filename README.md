@@ -679,7 +679,42 @@ if (a === 10) {
 }
 ```
 
-### 
+### 4.3 if-else语句
+
+if - else语句，语法：
+
+`if(条件表达式) {语句}  else {语句}`
+
+if - else if - else 语句，语法：
+
+`if(条件表达式) {语句}  else if(条件表达式) {语句}  else {语句}`
+
+- 注意：if - else if - else语句中只会有一个代码块被执行，一旦有执行的代码块，它后边的条件都不会再继续判断了。
+
+```js
+let age = 60
+if (age >= 18) {
+    alert('成年人')
+} else {
+    alert('未成年人')
+}
+
+//if - else if - else
+let score = 100
+if (score >90) {
+    alert('成绩优秀')
+} else if (score > 80) {
+    alert('成绩良好')
+} else if (score > 70) {
+    alert('成绩中等')
+} else if (score >= 60) {
+    alert('成绩及格')
+} else {
+    alert('成绩不及格')
+}
+```
+
+
 
 
 
