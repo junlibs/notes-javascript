@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>练习1</title>
+  <script>
+    /* 
+    编写一个程序，获取一个用户输入的整数，然后通过程序显示这个数是奇数还是偶数
+    */
+
+    //let input = prompt('请输入一个整数')//prompt获取的是一个string类型，还需要转化为number
+    let input = +prompt('请输入一个数字')
+    //校验输入合法性.string转换为数字是NaN
+    if (isNaN(input) || input % 1 !== 0) {
+      alert('输入有误')
+    } else {
+      if (input % 2 === 0) {
+        alert(`${input}是偶数`)
+      } else  {
+        alert(`${input}是奇数`)
+      } 
+    }
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
